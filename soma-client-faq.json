@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-01-15T10:30:00Z",
+  "categories": [
+    {
+      "title": "Getting Started",
+      "questions": [
+        {
+          "question": "How do I create my first health event?",
+          "answer": "To create your first health event, tap the journal button on the home screen and select your current stress level. Add any notes about what you're experiencing."
+        },
+        {
+          "question": "What is the activity widget?",
+          "answer": "The activity widget helps you track various wellness activities and their impact on your overall health score."
+        }
+      ]
+    },
+    {
+      "title": "Data Management",
+      "questions": [
+        {
+          "question": "How do I export my data?",
+          "answer": "Go to Settings > Data Management > Export Health Data. This will create a JSON file with all your health events, metadata, and adjustments."
+        },
+        {
+          "question": "Can I import data from another device?",
+          "answer": "Yes, use Settings > Data Management > Import Health Data to import a previously exported JSON file."
+        }
+      ]
+    }
+  ]
+}
