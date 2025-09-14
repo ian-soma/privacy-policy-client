@@ -7,15 +7,15 @@
       "questions": [
         {
           "question": "What is Soma Client?",
-          "answer": "Soma Client is a small, simple, secure and completely anonymous journal taking app. With so many unsafe digital spaces on the internet, Soma Client was designed to be a place where users can be truly authentic and vulnerable and have that data in the future at their finger tips. Because all the journal entries are searchable quickly, Soma Client can be used to track journal entries that you then want to bring up with your clinician. Simply record journals and before appointments review."
+          "answer": "Soma Client is a secure, anonymous journaling app designed to give you a private space to express yourself freely. All entries are searchable, making it easy to review them before clinical appointments or personal reflection."
         },
         {
           "question": "How is it secure?",
-          "answer": "Soma Client uses many technologies to ensure its security. It is local first, all journals are in an encrypted space on this phone, and only leave this phone if you consent to share in some way. All data remains anonymous always, Soma doesn't identify you in any way. Your data is encrypted always, even if you share your data to our cloud, we still can't see your journal entries. Your passcode is bound to this phone, no one can steal a passcode from you and get your data outside of this phone."
+          "answer": "Soma Client stores all journals locally in an encrypted space on your device. Data never leaves your phone unless you choose to share it. Even if synced to our cloud, entries remain encrypted and anonymous. Your passcode is bound to your device, ensuring your data cannot be accessed elsewhere."
         },
         {
-          "question": "Anonymous app? - can it do everything a modern app can do?",
-          "answer": "Soma Client is very close to modern comforts of other apps, however since it is completely anonymous there are some things we are still figuring out. We provide ways for you to switch phones, but right now it requires a little more work on your part by exporting / importing files. Soma Client can only be used on one device, there is no multiple log ins from phone / tablets, we recommend using Soma on your primary device. Because we do not know who you are from our database, if you lose your passcode, there is very little we can do, you will have to uninstall and start over. We suggest emailing your passcode to yourself with a subject that you can search, again, this method is safer than most, as it can only be used on this phone."
+          "question": "Anonymous app – can it do everything a modern app can?",
+          "answer": "Soma Client offers most modern features while remaining fully anonymous. Some limitations exist: it only works on one device at a time, and switching devices requires exporting and importing your data manually. If you lose your passcode, recovery isn’t possible—you’ll need to reinstall and start fresh. We recommend storing your passcode securely, such as emailing it to yourself for safe reference."
         }
       ]
     },
@@ -24,7 +24,7 @@
       "questions": [
         {
           "question": "How do I get my data / switch phones?",
-          "answer": "In Settings, Under Data Management tap Export Data. Choose an area like Downloads to save the .json file. This is your data. To switch phones, email this file to yourself and setup your new phone. Download Soma Client again and start a new account. Download the file from your email, save it in Downloads. In Soma Client, Settings, tap Import data, navigate to Downloads and select the file. Your journals are now part of this new account."
+          "answer": "Go to Settings > Data Management > Export Data to save your journals as a .json file. Email this file to yourself, set up Soma Client on your new device, then use Settings > Data Management > Import Data to restore your entries."
         }
       ]
     },
@@ -32,16 +32,16 @@
       "title": "Professional Features",
       "questions": [
         {
-          "question": "What is this Mental Health Professional areas of Soma Client?",
-          "answer": "Soma Client can be paired with a Mental Health Professional (currently in Canada only), in this case, you can share your journal entries with your professional."
+          "question": "What is the Mental Health Professional area of Soma Client?",
+          "answer": "In Canada, Soma Client can be paired with a Mental Health Professional, allowing you to securely share your journal entries with them."
         },
         {
           "question": "Can I share some journals and not others?",
-          "answer": "Unfortunately this is not yet a feature of Soma Client. Please remove any journal entries you do not want to share. We understand this is an inconvenience and will be building better features to accommodate this."
+          "answer": "Not yet. Currently, you must delete any entries you don’t wish to share. More flexible sharing options are planned for future updates."
         },
         {
           "question": "What is Auto-Approve Data Sharing?",
-          "answer": "This feature is mainly used for connections with Mental Health Professionals, where you give consent to auto sync your journal entries always, instead of every time they request them. If you are an individual user, you can ignore this. However, if you wish to support Soma Client, you can turn this feature on in combination with Data Consent, allowing us to use your anonymous journal entries to improve the product more rapidly with better features and support."
+          "answer": "This option lets you automatically share journal entries with your Mental Health Professional instead of approving each request. Individual users can ignore this setting, but enabling it also allows Soma to use your anonymous data to improve features more quickly."
         }
       ]
     },
@@ -50,11 +50,11 @@
       "questions": [
         {
           "question": "What is Enable Voice Commands?",
-          "answer": "This feature allows you to record a journal via your voice. It uses 3rd party services. These services have been specifically curated by Soma so that they do not keep or use your data. They may retain data, untouched, for up to 3 to 5 days as an automatic way for us to retrieve your data again, which we do not do. We transcribe your voice in real time with them, then use our own proprietary technology to parse what you said into data, which we return to the journal screen and then throw away. You hit save, and it gets encrypted in your private data."
+          "answer": "This feature lets you record journals by voice using carefully selected third-party transcription services. These services do not use your data and only retain it briefly (3–5 days) for technical purposes. Transcriptions are processed in real time, then encrypted and stored securely on your device."
         },
         {
           "question": "What is Data Usage Consent?",
-          "answer": "This feature allows you to help improve Soma Client by giving us permission to use your anonymous journal data to guide development. With this consent, we can: Identify patterns in how users journal (frequency, length, features used) to better prioritize new functionality; Spot common issues or pain points that users face, so we can improve usability and reliability; Test and refine new features with real-world, anonymized data — ensuring that updates are genuinely helpful; Train future versions of our natural language tools (such as voice-to-text transcription and journal search) while protecting your privacy. All of this happens without identifying you personally, and your journals remain encrypted and anonymous throughout the process."
+          "answer": "With your consent, Soma can use anonymous journal data to improve the app. This helps us identify user needs, refine features, enhance usability, and train better tools like search and voice transcription. Your data always remains encrypted and anonymous."
         }
       ]
     }
