@@ -79,7 +79,7 @@
     <p>- -</p>
 </div>
 
-<p class="updated-date">Updated: May 5, 2026</p>
+<p class="updated-date">Updated: May 17, 2026</p>
 
 <h1>SOMA TERMS OF SERVICE</h1>
 
@@ -178,7 +178,9 @@
 
     <li>access or use the Platform in order to infringe, misappropriate, or otherwise violate any IP Right of any third party; or</li>
 
-    <li>access or use the Platform for purposes of competitive analysis of the Services, including the development, provision, or use of a competing software service or product.</li>
+    <li>access or use the Platform for purposes of competitive analysis of the Services, including the development, provision, or use of a competing software service or product; or</li>
+
+    <li>intentionally upload, transmit, or otherwise provide to the Platform any administered test protocol, item booklet, stimulus book, scoring key, or test manual the upload of which would breach the Customer's agreement with a third-party assessment publisher or applicable copyright Law.</li>
 </ol>
 
 <h2>2.4 Shared Terms – Client Connection, Data Sharing, Audio Recording, and Wearable Device Data</h2>
@@ -369,7 +371,7 @@
 <h2>4.6 Personal Information and Personal Health Information – General Compliance.</h2>
 
 <ol type="a">
-    <li>Each Party will comply with all applicable Law regarding their respective responsibilities involving the collection, use and disclosure of Personal Information and Personal Health Information, including the Personal Information Protection and Electronic Documents Act (PIPEDA) and applicable provincial health privacy legislation. For clarity, no Personal Health Information is intended to be stored on the Platform outside of the EMR Module, and Customer accepts all risk and responsibility for any storage of Personal Health Information on the Platform outside of the EMR Module. The EMR Module is designed to store Personal Health Information, including patient identity records and clinical documentation. All Personal Health Information stored within the EMR Module is encrypted at rest at the field level, and access is restricted to the authorized Professional through the Platform's access control mechanisms. Where the Customer elects to use the EMR Module, the Customer is responsible for ensuring that its collection, use, and storage of Personal Health Information through the EMR Module complies with all applicable Law, including obtaining any required patient consent. Soma is responsible for the secure storage and encryption of such information as described in this Agreement. Use of the EMR Module requires the Customer to configure and maintain a connection to an external, Customer-controlled data storage service for the purpose of clinical record backup. Soma will periodically export clinical records to the Customer's designated storage destination. The Customer is solely responsible for ensuring that such external storage satisfies applicable record retention requirements.</li>
+    <li>Each Party will comply with all applicable Law regarding their respective responsibilities involving the collection, use and disclosure of Personal Information and Personal Health Information, including the Personal Information Protection and Electronic Documents Act (PIPEDA) and applicable provincial health privacy legislation. For clarity, no Personal Health Information is intended to be stored on the Platform outside of the EMR Module and the Reports v2 Module, and Customer accepts all risk and responsibility for any storage of Personal Health Information on the Platform outside of those Modules. The EMR Module and the Reports v2 Module are each designed to store Personal Health Information, including patient identity records, clinical documentation, and (in the case of the Reports v2 Module) source assessment materials, automated optical character recognition output, automated redactions, and generated report drafts. All Personal Health Information stored within these Modules is encrypted at rest at the field level where applicable, and access is restricted to the authorized Professional through the Platform's access control mechanisms. In the case of the Reports v2 Module, Soma applies automated de-identification measures to optical-character-recognition output inside the server before persisting any document text, so that only the redacted text representation is written to active storage, as further described in Section 4.10 and Section 11.2. Where the Customer elects to use either Module, the Customer is responsible for ensuring that its collection, use, and storage of Personal Health Information through that Module complies with all applicable Law, including obtaining any required patient consent. Soma is responsible for the secure storage and encryption of such information as described in this Agreement. Use of the EMR Module requires the Customer to configure and maintain a connection to an external, Customer-controlled data storage service for the purpose of clinical record backup. Soma will periodically export clinical records to the Customer's designated storage destination. The Customer is solely responsible for ensuring that such external storage satisfies applicable record retention requirements.</li>
 
     <li>Each Party understands and agrees that amendments to this Agreement may be required to comply with legislative changes regarding Personal Information and/or Personal Health Information. The Parties agree to negotiate in good faith any amendment to this Agreement as required to comply with applicable Law regarding Personal Information or Personal Health Information.</li>
 
@@ -382,6 +384,10 @@
     <li>Soma will be responsible, as part of the Services, for the secure storage of Customer Data, Personal Information, and Personal Health Information uploaded to the Platform.</li>
 
     <li>Notwithstanding section 4.7(a), the Services do not replace the need for Customer to maintain regular data backups or redundant data archives regarding its Customer Data.</li>
+
+    <li><strong>Default retention windows.</strong> For Customer Data uploaded to the Reports v2 Module, Soma retains source materials, the redacted representation of automated optical-character-recognition output, and generated Output for the duration of the active session and for twenty-five (25) days following session completion, after which active-storage copies are automatically purged. The Customer may shorten or extend this default through the Service's account-level retention settings, in which case the adjusted period applies to all of the Customer's Reports v2 sessions, subject to any maximum or minimum imposed by Soma from time to time. The Customer may delete any individual session at any time through the per-session deletion control.</li>
+
+    <li><strong>Database backups.</strong> Encrypted database backups, which may contain residual copies of Customer Data, are retained for seven (7) days, after which they are automatically purged. Raw, un-redacted Customer Data is not persisted to active storage at any point in the Reports v2 Module lifecycle; only the redacted form is written, save for the seven-day encrypted database backup window described in this Section.</li>
 </ol>
 
 <h2>4.8 Data Breach Procedures.</h2>
@@ -397,6 +403,20 @@
 <h2>4.9 Data Residency.</h2>
 
 <p>All Customer Data at rest is stored exclusively in Canada. Certain features of the Platform may require limited processing of Customer Data outside of Canada by third-party service providers, as described in Article XI. In all such cases, Customer Data is not retained by the third-party service provider after processing is complete. Soma applies de-identification measures to Customer Data prior to transmission to third-party service providers as an additional safeguard; however, Customer acknowledges that automated de-identification processes may not identify all personal identifiers in every instance. All data transmitted to third-party services is encrypted in transit using industry-standard encryption protocols.</p>
+
+<h2>4.10 Reports v2 Module – Data Lifecycle.</h2>
+
+<p>Where the Customer uses the Reports v2 Module:</p>
+
+<ol type="a">
+    <li>Uploaded source materials (assessment PDFs and the Customer's own notes) are stored in encrypted form in Canada and made available to the Customer during the active session.</li>
+
+    <li>The Platform performs automated optical character recognition on uploaded materials, producing extracted text. The Platform then applies automated named-entity-recognition redactions to the extracted text, producing a redacted text representation. The Customer reviews and adjusts these redactions during the "<strong>Document Review</strong>" phase of the session.</li>
+
+    <li>Soma applies automated named-entity-recognition redaction to extracted text inside the server before persisting any document text to active storage. As a result, raw (un-redacted) extracted text is not written to Soma's database at any point. The redacted text representation is retained for downstream processing, report generation, and the Customer's review, save for the seven-day encrypted database backup window described in Section 4.7(d). Soma periodically audits the redaction pass and treats any unscrubbed-PHI leakage as a Data Incident under Section 4.8.</li>
+
+    <li>Reports v2 sessions are subject to the retention windows in Section 4.7(c) and to the Customer's per-session deletion control and account-level retention settings.</li>
+</ol>
 
 <div class="article-title">ARTICLE V<br>IP RIGHTS</div>
 
@@ -511,9 +531,19 @@
 <p>Customer represents to Soma that:</p>
 
 <ol type="a">
-    <li>Customer owns or otherwise has, and will have, the necessary rights and consents in and relating to its own Customer Data and any patient data (including Personal Information and Personal Health Information) so that, as received by Soma and Processed in accordance with this Agreement, the Parties will not infringe, misappropriate or otherwise violate any IP Rights, or any privacy or other rights of any Person, or violate any applicable Law due to the Customer's use or disclosure of Customer Data or patient data in connection with the Services; and</li>
+    <li>Customer owns or otherwise has, and will have, the necessary rights and consents in and relating to its own Customer Data and any patient data (including Personal Information and Personal Health Information) so that, as received by Soma and Processed in accordance with this Agreement, the Parties will not infringe, misappropriate or otherwise violate any IP Rights, or any privacy or other rights of any Person, or violate any applicable Law due to the Customer's use or disclosure of Customer Data or patient data in connection with the Services;</li>
 
-    <li>in particular, as the transcription product feature enables the recording and transcription of audio from medical appointments for documentation purposes, Customer has obtained all necessary and explicit consent from individuals whose voices may be recorded in accordance with privacy laws and other professional or ethical obligations.</li>
+    <li>in particular, as the transcription product feature enables the recording and transcription of audio from medical appointments for documentation purposes, Customer has obtained all necessary and explicit consent from individuals whose voices may be recorded in accordance with privacy laws and other professional or ethical obligations; and</li>
+
+    <li>without limiting Section 7.3(a), where the Customer uploads materials that incorporate standardized psychological, psychoeducational, or neuropsychological assessment instruments owned by a third-party publisher ("<strong>Test Publisher Materials</strong>"), the Customer represents and warrants that:
+        <ol type="i">
+            <li>the Customer holds the qualifications, registrations, and licences required by the relevant publisher's user-qualification framework (including Pearson Qualification Level B and Level C agreements and equivalent agreements with other publishers);</li>
+            <li>the materials uploaded consist only of score reports, summary outputs, score tables, or interpretive printouts of a kind ordinarily generated by the publisher's scoring software or hand-scored by the Customer, together with the Customer's own clinical notes and report drafts;</li>
+            <li>the materials uploaded do not include administered test protocols showing test items, item booklets, stimulus books, manipulatives, audio or video stimulus materials, scoring keys, or test manuals; and</li>
+            <li>where the Customer uploads a reference report for stylistic or structural guidance, that reference report is either (A) authored by the Customer, or (B) authored by another professional and uploaded with that professional's documented consent and with all patient-identifying information removed.</li>
+        </ol>
+        The Customer acknowledges that the Platform cannot verify the contents of Customer Data prior to upload, and that the Customer bears sole responsibility for the lawfulness of each upload.
+    </li>
 </ol>
 
 <h2>7.4 Disclaimers.</h2>
@@ -557,10 +587,26 @@
 <ol type="a">
     <li>A breach of confidentiality by either Party contravening the conditions described in section 6.3;</li>
 
-    <li>Either Party's indemnification obligations set forth in Section 8.1 or 8.2; or</li>
+    <li>Either Party's indemnification obligations set forth in Section 8.1, 8.2, or 8.5; or</li>
 
     <li>A loss, disclosure, alteration, misuse, or other breach of Customer Data by Soma in connection with a Data Incident that contravenes the obligations described in section 4.2.</li>
 </ol>
+
+<h2>8.5 Customer Indemnification – Breach of Representations and Warranties.</h2>
+
+<p>In addition to Section 8.2, the Customer will indemnify, defend, and hold harmless Soma and its affiliates, along with each of its and their respective officers, directors, employees, agents, successors, and permitted assigns (each, a "<strong>Soma Indemnitee</strong>") from and against any and all Losses incurred by such Soma Indemnitee in connection with any claim by a third party (other than an affiliate of a Soma Indemnitee) that arises out of or relates to:</p>
+
+<ol type="a">
+    <li>any breach by the Customer of the representations and warranties in Section 7.3, including without limitation a breach of Section 7.3(c) relating to Test Publisher Materials;</li>
+
+    <li>the Customer's upload of materials to the Platform in breach of any agreement between the Customer and a third-party assessment publisher (including without limitation Pearson, Multi-Health Systems Inc., PAR Inc., Western Psychological Services, and Riverside Insights) or in breach of any third party's intellectual property rights; or</li>
+
+    <li>the Customer's failure to obtain any consent required under applicable privacy or health information Law for the processing of patient data by the Platform.</li>
+</ol>
+
+<p>Soma will: (i) promptly notify the Customer in writing of any claim for which Soma seeks indemnification under this Section 8.5; (ii) give the Customer sole control over the defence and settlement of such claim, provided that no settlement may admit fault on the part of any Soma Indemnitee or impose any obligation on a Soma Indemnitee without that Soma Indemnitee's prior written consent; and (iii) provide reasonable cooperation in the defence of such claim at the Customer's expense.</p>
+
+<p>This Section 8.5 is in addition to, and not in limitation of, any other indemnification or remedy available to Soma under this Agreement or applicable Law.</p>
 
 <div class="article-title">ARTICLE IX<br>TERM AND TERMINATION</div>
 
@@ -650,7 +696,7 @@
 
 <h2>11.2 De-identification Measures.</h2>
 
-<p>Soma applies automated de-identification measures to Customer Data prior to transmission to Third-Party AI Services. These measures are designed to remove or replace personal identifiers with pseudonymous tokens to reduce the likelihood that data processed by Third-Party AI Services can be traced back to individual patients. Customer acknowledges that automated de-identification is applied as a safeguard but may not identify all personal identifiers in every instance. The primary protection for Customer Data transmitted to Third-Party AI Services is the no-retention commitment described in Section 11.3.</p>
+<p>Soma applies automated de-identification measures to document-format Customer Data (such as uploaded text, optical-character-recognition output, or written assessment material) prior to transmission to Third-Party AI Services. These measures are designed to remove or replace personal identifiers with pseudonymous tokens to reduce the likelihood that data processed by Third-Party AI Services can be traced back to individual patients. Customer acknowledges that automated de-identification is applied as a safeguard but may not identify all personal identifiers in every instance. Real-time audio streams used for transcription are not de-identified prior to transmission; their primary protections are the real-time-only processing model and the audio non-retention commitment described in Section 2.4(d)(ii), together with the no-retention commitment described in Section 11.3, which is the primary protection for all Customer Data transmitted to Third-Party AI Services.</p>
 
 <h2>11.3 No Retention of Customer Data by AI Providers.</h2>
 
@@ -750,7 +796,31 @@
 
 <h2>A.4 Sub-processors.</h2>
 
-<p>Soma engages the following sub-processors in connection with the Platform: Supabase (Canadian-region database and storage); Amazon Web Services (Bedrock and Lambda in the ca-central-1 region, with cross-region inference to United States regions for certain computationally-intensive AI calls under the no-retention and no-training commitments described in Article XI); and any additional sub-processors disclosed by Soma from time to time. Soma will provide Customer with not less than thirty (30) days' written notice of any material change to its sub-processor list.</p>
+<p>Soma engages the following sub-processors in connection with the Platform:</p>
+
+<p><strong>(a) Cloud and infrastructure providers handling Personal Health Information or Customer Data:</strong></p>
+
+<ul>
+    <li><strong>Amazon Web Services, Inc.</strong> — Amazon Bedrock and AWS Lambda, primarily in the ca-central-1 (Canada) region, with cross-region inference to United States regions for certain computationally-intensive AI calls. All Customer Data is transmitted to and from AWS under TLS encryption, and any Customer Data briefly resident in AWS Lambda function memory or AWS object storage during processing is encrypted at rest using AWS server-side encryption. AWS Bedrock operates under a <strong>Zero Data Retention</strong> configuration: no prompt content, response content, or Customer Data is retained by AWS after an inference request completes, and Customer Data is not used to train any AI model (as further described in Sections 11.3 and 11.4). Soma has accepted the AWS Business Associate Addendum governing AWS's handling of Personal Health Information.</li>
+    <li><strong>Supabase, Inc.</strong> — Canadian-region PostgreSQL database, object storage, and authentication infrastructure, governed by the Supabase Data Processing Addendum. Customer Data is protected by multiple layers of encryption: TLS encryption in transit, disk-level encryption at rest within Supabase's underlying cloud infrastructure, and application-level field encryption applied by Soma to sensitive columns within the database (including identity records and clinical content).</li>
+    <li><strong>Vercel Inc.</strong> — Next.js application hosting and serverless function execution. Personal Health Information is transmitted to and from Vercel under TLS encryption (as further described in Section 4.9) and is briefly held in serverless function memory while the request is being processed, after which the function memory is reclaimed; no Personal Health Information is persisted to Vercel storage. Cross-border processing through Vercel is subject to Sections 4.9 and 11.5.</li>
+</ul>
+
+<p><strong>(b) Operational providers handling Personal Information but not Personal Health Information:</strong></p>
+
+<ul>
+    <li><strong>Stripe, Inc.</strong> — payment processing and subscription billing, under Stripe's standard Data Processing Addendum.</li>
+    <li><strong>Resend Inc.</strong> — transactional and authentication email delivery (verification links, account invitations, password resets).</li>
+</ul>
+
+<p><strong>(c) Mobile-application providers (integrations in process of being decommissioned):</strong></p>
+
+<ul>
+    <li><strong>Google LLC — Firebase Cloud Messaging</strong> — push notification delivery for the Soma mobile application. Push notification payloads do not contain Personal Health Information.</li>
+    <li><strong>Fitbit LLC</strong> — wearable health data integration, where the Client has explicitly consented to connect a wearable device under Section 2.4(e). This integration is being decommissioned.</li>
+</ul>
+
+<p>Soma will provide Customer with not less than thirty (30) days' written notice of any material change to its sub-processor list.</p>
 
 <h2>A.5 Audit.</h2>
 
