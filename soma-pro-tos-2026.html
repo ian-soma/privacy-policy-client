@@ -93,7 +93,7 @@
       <p>- -</p>
     </div>
 
-    <p class="updated-date">Updated: June 8, 2026</p>
+    <p class="updated-date">Updated: August 23, 2026</p>
 
     <h1>SOMA TERMS OF SERVICE</h1>
 
@@ -336,9 +336,11 @@
       <li>
         "<strong>Third-Party AI Services</strong>" means the artificial
         intelligence services provided by third-party vendors that Soma
-        integrates with the Platform to deliver AI-powered features, accessed
-        exclusively through Amazon Web Services Bedrock and currently limited to
-        large-language-model services provided by Anthropic, PBC.
+        integrates with the Platform to deliver AI-powered features, currently
+        limited to (i) large-language-model services provided by Anthropic, PBC,
+        accessed through Amazon Web Services Bedrock, and (ii)
+        large-language-model services provided by Google LLC, accessed through
+        Google Cloud Vertex.
       </li>
     </ol>
 
@@ -745,6 +747,40 @@
       debit or withholding for any reason.
     </p>
 
+    <h2>3.7 Usage Credits.</h2>
+
+    <p>
+      Where an Order specifies Fees denominated in usage credits ("<strong
+        >Usage Credits</strong
+      >"), the number of Usage Credits allocated to a subscription tier or
+      package reflects then-current third-party service-provider costs and is
+      subject to change from time to time. Soma will provide Customer with
+      reasonable advance notice of any change to Usage Credit allocations prior
+      to Customer's next billing cycle; no such change will apply retroactively
+      within a billing cycle already paid for.
+    </p>
+
+    <h2>3.8 Overage Continuation.</h2>
+
+    <p>
+      Customer may elect to enable continued use of the Platform beyond its
+      included Usage Credit allowance for a billing cycle ("<strong
+        >Overage Continuation</strong
+      >"). Overage Continuation is disabled by default and must be affirmatively
+      enabled by Customer. Where Customer has enabled Overage Continuation, Soma
+      will provide notice — by in-app notification requiring acknowledgment and
+      by email to the account holder — before or upon initiation of any billing
+      for usage beyond the included allowance.
+    </p>
+
+    <h2>3.9 Effect of Election.</h2>
+
+    <p>
+      Customer's enablement of Overage Continuation constitutes Customer's
+      consent to additional billing at the rates then in effect for usage beyond
+      the included allowance.
+    </p>
+
     <div class="article-title">ARTICLE IV<br />DATA PRIVACY &amp; SECURITY</div>
 
     <h2>4.1 Ownership and Use of Customer Data.</h2>
@@ -763,7 +799,8 @@
         perform the Services or comply with applicable Law. Soma will not use
         Customer Data for any other purpose, including to train, fine-tune, or
         improve any AI model, except with the Customer's prior written
-        authorization as described in any executed DPA.
+        authorization as described in any executed DPA, or as otherwise
+        permitted under Section 4.5.
       </li>
     </ol>
 
@@ -830,6 +867,20 @@
       of ensuring that (i) the anonymization is performed to industry standards,
       and (ii) the anonymized data cannot reasonably be re-identified to a
       natural person.
+    </p>
+
+    <p>
+      Notwithstanding Section 4.1(b), Soma's legitimate internal business
+      purposes under this Section 4.5 include the training, fine-tuning, or
+      improvement of Soma's own AI models using anonymized or aggregated
+      Customer Data, and such use does not require the Customer's separate
+      written authorization under an executed DPA, provided that the data so
+      used has been anonymized and aggregated in accordance with this Section
+      4.5 and cannot reasonably be re-identified to a natural person or to a
+      specific Customer. For clarity, this Section does not permit the use of
+      Customer Data to train, fine-tune, or improve the models of any
+      Third-Party AI Service, which remains governed exclusively by Section
+      11.4.
     </p>
 
     <h2>
@@ -1584,9 +1635,10 @@
 
     <p>
       The Platform incorporates AI-powered features that utilize Third-Party AI
-      Services, currently limited to large-language-model services provided by
-      Anthropic, PBC and accessed exclusively through Amazon Web Services
-      Bedrock, to generate Output such as clinical-note drafts,
+      Services, currently limited to (i) large-language-model services provided
+      by Anthropic, PBC, accessed through Amazon Web Services Bedrock, and (ii)
+      large-language-model services provided by Google LLC, accessed through
+      Google Cloud Vertex, to generate Output such as clinical-note drafts,
       assessment-report drafts, and analytical summaries. Soma reserves the
       right to add, replace, or modify Third-Party AI Service providers in
       accordance with the sub-processor change-notice procedure in any executed
@@ -1615,11 +1667,12 @@
       processed in real-time solely for the purpose of generating the requested
       Output. Data is not retained at rest by any Third-Party AI Service after
       the request is processed and the Output is returned. Soma maintains
-      agreements with all Third-Party AI Services and with Amazon Web Services
-      as the underlying Bedrock provider prohibiting them from storing or
-      retaining any Customer Data (including inputs, document data, or any other
-      transmitted information) beyond the time necessary to generate and return
-      Output to Soma.
+      agreements with all Third-Party AI Services, with Amazon Web Services as
+      the underlying Bedrock provider, and with Google LLC as the underlying
+      Vertex provider, prohibiting them from storing or retaining any Customer
+      Data (including inputs, document data, or any other transmitted
+      information) beyond the time necessary to generate and return Output to
+      Soma.
     </p>
 
     <h2>11.4 No Use of Customer Data for AI Model Training.</h2>
@@ -1630,8 +1683,9 @@
       AI Services. Soma maintains contractual commitments with each Third-Party
       AI Service provider that expressly prohibit the use of Customer Data for
       model training, fine-tuning, or any form of machine-learning improvement.
-      This restriction expressly applies to audio data, transcripts, and any
-      derivative outputs generated through the Session Recording feature.
+      This restriction applies to all Customer Data without limitation,
+      including document and assessment inputs, chat inputs, session notes,
+      audio data, transcripts, and any derivative outputs.
     </p>
 
     <h2>11.5 Cross-Border Processing.</h2>
@@ -1657,6 +1711,20 @@
       omissions. Customer is solely responsible for reviewing, editing, and
       approving all Output before clinical use, as further described in Section
       7.4.
+    </p>
+
+    <h2>11.7 Interactive Chat Agent.</h2>
+
+    <p>
+      Certain AI-powered features may be delivered through an interactive,
+      conversational interface (the "<strong>Chat Agent</strong>") that responds
+      to natural-language queries and may initiate certain actions within the
+      Platform on Customer's instruction. The Chat Agent is subject to the same
+      Output limitations, de-identification measures, and disclaimers set out in
+      this Article XI and in Section 7.4. For clarity, the Chat Agent does not
+      provide medical, clinical, or diagnostic advice, and any action it
+      initiates remains subject to Customer's review and authorization in
+      accordance with Section 7.4(h).
     </p>
 
     <div class="article-title">ARTICLE XII<br />PRIVACY COMPLIANCE</div>
@@ -1910,17 +1978,24 @@
       </li>
 
       <li>
+        <strong>Google LLC</strong> — AI model access through Google Cloud
+        Vertex; AI inference in Canada (northamerica-northeast1, Montreal); no
+        cross-border processing, prompt logging disabled and zero retention;
+      </li>
+
+      <li>
         <strong>Supabase, Inc.</strong> — managed PostgreSQL, authentication,
         object storage, edge functions; Canada (Central) — AWS ca-central-1;
       </li>
 
       <li>
         <strong>Vercel, Inc.</strong> — hosting and edge delivery for the Soma
-        professional web application; requests carrying Personal Health
-        Information transit Vercel under Vercel's Business Associate Agreement
-        with TLS in transit; function logs do not capture Personal Health
-        Information; United States (transit only; no at-rest storage of
-        Regulated Data on Vercel);
+        professional web application; all function execution in Canada (yul1,
+        Montreal), including transient in-memory processing of Personal Health
+        Information prior to de-identification; Personal Health Information
+        transits Vercel under Vercel's Data Processing Addendum with TLS in
+        transit; function logs do not capture Personal Health Information; no
+        at-rest storage of Regulated Data on Vercel;
       </li>
 
       <li>

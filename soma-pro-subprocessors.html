@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SOMA Health — Sub-processors</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; max-width: 980px; margin: 2rem auto; padding: 0 1.25rem; color: #111; line-height: 1.55; }
+  h1 { font-size: 1.75rem; border-bottom: 2px solid #1a365d; padding-bottom: 0.5rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.2rem; color: #1a365d; margin-top: 2.25rem; }
+  h3 { font-size: 1.02rem; color: #1a365d; margin-top: 1.4rem; }
+  .meta { color: #555; font-size: 0.9rem; margin-bottom: 1.25rem; }
+  .draft-banner { background: #fef3c7; border-left: 4px solid #d97706; padding: 0.75rem 1rem; margin: 1rem 0 2rem; font-size: 0.92rem; }
+  .verify { background: #fef9c3; padding: 0 0.3rem; border-radius: 3px; font-style: italic; color: #713f12; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.94rem; }
+  th, td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+  th { background: #f3f4f6; font-weight: 600; }
+  .pill { display: inline-block; padding: 0.05rem 0.45rem; font-size: 0.78rem; border-radius: 999px; margin-right: 0.25rem; white-space: nowrap; }
+  .pill.phi { background: #fee2e2; color: #991b1b; }
+  .pill.pii { background: #dbeafe; color: #1e40af; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; font-size: 0.85rem; color: #555; }
+</style>
+</head>
+<body>
+
+<h1>SOMA Health — Sub-processors</h1>
+<p class="meta"><strong>Last updated:</strong> August 23, 2026</p>
+
+<p>This page lists the third-party service providers ("sub-processors") that Soma Health Solutions Inc. ("SOMA") engages to deliver the SOMA Services. Each sub-processor that processes Customer information does so under a written agreement that imposes data-protection, confidentiality, and security obligations at least as strict as SOMA's commitments to its customers, including an executed Business Associate Agreement / Data Processing Addendum where Protected Health Information is involved.</p>
+
+<p>The legend below applies to the <em>Data Categories</em> column.</p>
+<p>
+  <span class="pill pii">PII</span> Personally Identifiable Information &nbsp;&nbsp;
+  <span class="pill phi">PHI</span> Protected Health Information
+</p>
+
+<h2>Current Sub-processors</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:18%">Sub-processor</th>
+      <th style="width:32%">Purpose of Processing</th>
+      <th style="width:14%">Data Categories</th>
+      <th style="width:36%">Processing Location(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Amazon Web Services, Inc.</td>
+      <td>Primary cloud infrastructure: compute, object storage, networking, and AI model access through AWS Bedrock</td>
+      <td><span class="pill pii">PII</span><span class="pill phi">PHI</span></td>
+      <td>Canada (ca-central-1, Montreal) for storage and compute. Transient AI inference may execute in U.S. AWS Regions through Bedrock cross-region inference, under executed BAA with model-invocation logging disabled and zero retention; inputs are de-identified in Canada before transmission.</td>
+    </tr>
+    <tr>
+      <td>Google LLC</td>
+      <td>AI model access through Google Cloud Vertex</td>
+      <td><span class="pill phi">PHI</span></td>
+      <td>Canada (northamerica-northeast1, Montreal); no cross-border processing, prompt logging disabled and zero retention; inputs de-identified before transmission.</td>
+    </tr>
+    <tr>
+      <td>Supabase, Inc.</td>
+      <td>Managed PostgreSQL database, authentication service, object storage, edge functions</td>
+      <td><span class="pill pii">PII</span><span class="pill phi">PHI</span></td>
+      <td>Canada (Central) — AWS ca-central-1</td>
+    </tr>
+    <tr>
+      <td>Anthropic, PBC</td>
+      <td>Large-language-model inference for AI-assisted clinical drafting features; accessed exclusively through AWS Bedrock. Contractually prohibited from retaining customer data or using it for model training.</td>
+      <td><span class="pill phi">PHI</span></td>
+      <td>U.S. AWS Regions (transient inference only; no at-rest storage; zero retention; inputs de-identified in Canada before transmission)</td>
+    </tr>
+    <tr>
+      <td>Vercel, Inc.</td>
+      <td>Hosting and edge delivery for the SOMA professional web application. Requests carrying PHI transit Vercel under Vercel's Data Processing Addendum with TLS in transit; function logs do not capture PHI.</td>
+      <td><span class="pill pii">PII</span><span class="pill phi">PHI</span></td>
+      <td>Canada (yul1, Montreal) — all function execution, including transient in-memory processing of PHI prior to de-identification; no at-rest storage of Regulated Data on Vercel</td>
+    </tr>
+    <tr>
+      <td>Resend, Inc.</td>
+      <td>Transactional email (authentication links, account notifications, invitation flows)</td>
+      <td><span class="pill pii">PII</span> (recipient name, email address)</td>
+      <td>United States</td>
+    </tr>
+    <tr>
+      <td>Stripe, Inc.</td>
+      <td>Subscription billing and payment processing</td>
+      <td><span class="pill pii">PII</span> (billing contact and payment data)</td>
+      <td>United States</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Notice of Changes</h2>
+<p>SOMA will give customers at least thirty (30) days' prior notice of any addition or replacement of a sub-processor that processes Regulated Data. Customers may object to a proposed change on reasonable data-protection grounds within fifteen (15) days by writing to privacy@soma-health.ca. The procedure and remedies for unresolved objections are set out in the Data Processing Agreement, Section 5.2.</p>
+
+<h2>Related Documents</h2>
+<ul>
+  <li>Privacy Policy</li>
+  <li>Business Associate Agreement</li>
+  <li>Data Processing Agreement</li>
+  <li>Master Service Agreement</li>
+</ul>
+
+<footer>
+  <strong>Soma Health Solutions Inc.</strong><br>
+  St. John's, Newfoundland and Labrador<br>
+  support@soma-health.ca
+</footer>
+
+</body>
+</html>
